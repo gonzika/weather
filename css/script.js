@@ -86,6 +86,7 @@ fetch(`${API_URL}?id=${id}&appid=${API_KEY}&units=metric`)
             lis.forEach((li, index) => {
                 do {
                     size = sizes[Math.floor(Math.random() * sizes.length)]
+                    if (window.innerWidth < 650) size = 50
 
                 } while ((siz - size) < 0)
                 siz -= size
@@ -93,7 +94,6 @@ fetch(`${API_URL}?id=${id}&appid=${API_KEY}&units=metric`)
                 if (siz <= 0) siz = 100
 
                 if (index == id.length - 1 && siz != 100) {
-                    debugger
                     size += siz
                 }
 
